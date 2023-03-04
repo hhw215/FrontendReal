@@ -1,11 +1,54 @@
 {
-  "posts": [
+  "rapinatori": [
     {
-      "Nome": "Mario",
-      "Cognome": "Rossi",
-      "Telefono": "88888888",
-      "Modifica/Elimina": "",
+      "nome": "Tokyo",
+      "genere": "femmina",
+      "id": 1
+    },
+    {
+      "nome": "Professore",
+      "genere": "maschio",
+      "id": 2
+    },
+    {
+      "nome": "Rio",
+      "genere": "maschio",
+      "id": 3
+    },
+    {
+      "nome": "Mosca",
+      "genere": "maschio",
+      "id": 4
+    },
+    {
+      "nome": "Berlino",
+      "genere": "maschio",
+      "id": 5
+    },
+    {
+      "nome": "Denver",
+      "genere": "maschio",
+      "id": 6
+    },
+    {
+      "nome": "Helsinki",
+      "genere": "maschio",
+      "id": 7
+    },
+    {
+      "nome": "Nairobi",
+      "genere": "femmina",
+      "id": 8
+    },
+    {
+      "nome": "Lisbona",
+      "genere": "femmina",
       "id": 9
+    },
+    {
+      "nome": "Stoccolma",
+      "genere": "femmina",
+      "id": 10
     }
   ]
 }
