@@ -1,4 +1,51 @@
-body {
-    background-color: black;
+html {
+    font-size: 20px;
+    font-family: sans-serif;
 }
+.header {
+    background-color: black;
+    color: purple;
+    text-align: center;
+    margin: 20px auto 5px auto;
+    width: 95%;
+}
+.divider {
+    width: 95%;
+    height: 10px;
+    background-color: purple;
+    margin: 0 auto 10px auto;
+}
+
+textarea {
+    width: 400px;
+    height: 40px;
+}
+
+fieldset {
+    padding: 20px;
+} 
+
+form {
+    background-color: purple;
+    border-radius: 20px;
+    width: 95%;
+    margin: 5px auto;
+    padding: 20px;
+    color: white;
+}
+
+button {
+    background-color: purple;
+    color: white;
+    font-weight: bolder;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+table {
+    width: 95%;
+    border: 2px solid black;
+    margin: 5px auto;
+}
+
            

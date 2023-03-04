@@ -4,15 +4,57 @@
         <title>Rubrica Rapinatori Casa di Carta</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" 
+        crossorigin="anonymous">
     </head>
     <body>
-        
-        <div>
-            <table>
-
-            </table>
+        <div class="header">
+            <h1>La Casa Di Carta</h1>
+            <h2>Rubrica</h2>
+            <h3>-uso interno</h3>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <div class="divider"></div>
+        <div>
+            <form>
+                <fieldset>
+                    <label for="nome"><b>nome</b></label>
+                    <input type="text" id="nome" name="nome">
+                </fieldset>
+                <div class="divider"></div>
+                <fieldset>
+                    <label for="genere"><b>genere</b></label>
+                    <select>
+                        <option>select</option>
+                        <option>femmina</option>
+                        <option>maschio</option>
+                    </select>
+                </fieldset>
+                <div class="divider"></div>
+                <fieldset>
+                    <label for="nota"><b>nota</b></label>
+                    <textarea placeholder="nota importante" id="nota" type="text">ha nulla da perdere...</textarea>
+                </fieldset>
+                <div class="divider"></div>
+                <button type="submit" onclick="aggiungere()">Submit</button>
+            </form>
+        </div>
+        <table>
+            <thead>
+                <th>nome</th> 
+                <th>genre</th>
+                <th>nota</th>
+                <th>modifica</th>
+                <th>cancella</th>
+            </thead>
+            <tbody id="bodyRubrica">
+              <!--Insert data by javascript-->
+            </tbody>
+        </table>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" 
+        crossorigin="anonymous"></script>
     </body>
 </html>
