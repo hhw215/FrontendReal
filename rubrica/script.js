@@ -43,3 +43,34 @@ function get() {
         });
     });
 }
+
+function post() {
+    const nome = document.getElementById("nome");
+    const genere = document.getElementById("genere");
+    const nota = document.getElementById("nota");
+
+    let rapinatore = {
+        nome: nome.value,
+        genere: genere.value,
+        nota: nota.value
+    }
+
+    fetch("http://localhost:3000/rapinatori", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(rapinatore)
+    })
+    .then((Response) => (Response.json()))
+    .then(rapinatore => console.log(rapinatore))
+    .catch(error => console.error())
+}
+
+function put(element) {
+
+}
+
+function delet(element) {
+
+}
