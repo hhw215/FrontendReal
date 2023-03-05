@@ -19,7 +19,9 @@ function get() {
             const tdGenere = document.createElement("td");
             const tdNota = document.createElement("td");
             const tdButtonM = document.createElement("td");
+            const tdButtonMButton = document.createElement("button");
             const tdButtonE = document.createElement("td");
+            const tdButtonEButton = document.createElement("button");
 
             // append the element node as the last child of an element
             // append the [row] to the [body]
@@ -28,14 +30,16 @@ function get() {
             tr.appendChild(tdGenere);
             tr.appendChild(tdNota);
             tr.appendChild(tdButtonM);
+            tdButtonM.appendChild(tdButtonMButton);
             tr.appendChild(tdButtonE);
+            tdButtonE.appendChild(tdButtonEButton);
 
-            
+
             tdNome.innerHTML = element.nome;
             tdGenere.innerHTML = element.genere;
             tdNota.innerHTML = element.nota;
-            tdButtonM.innerHTML = "modifica";
-            tdButtonE.innerHTML = "elimina";
+            tdButtonMButton.innerHTML = "modifica";
+            tdButtonEButton.innerHTML = "elimina";
         });
     });
 }
