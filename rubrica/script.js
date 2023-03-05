@@ -2,17 +2,17 @@ const tbody = document.getElementById("tbody");
 
 /* use the Fetch API to retrieve data from a server 
 and display it in an HTML table using JavaScript */
-get();
+show();
 
-function get() {
+function show() {
     tbody.innerHTML = "";
     fetch("http://localhost:3000/rapinatori")
     .then((Response) => (Response.json()))
-    .then((data) => {
+    .then((data) => { 
         data.forEach(element => {
             // print the elements for debug purpose
             console.log(element);
-
+            console.log(element.id);
             // create the element node(a row and its contents)
             const tr = document.createElement("tr");
             const tdNome = document.createElement("td");
@@ -20,8 +20,12 @@ function get() {
             const tdNota = document.createElement("td");
             const tdButtonM = document.createElement("td");
             const tdButtonMButton = document.createElement("button");
+            tdButtonMButton.addEventListener("click", put(element.id));
             const tdButtonE = document.createElement("td");
             const tdButtonEButton = document.createElement("button");
+            tdButtonEButton.addEventListener("click", (event) => {
+                console.log("element.id " + "clicked");
+                delet(element.id)});
 
             // append the element node as the last child of an element
             // append the [row] to the [body]
@@ -34,12 +38,14 @@ function get() {
             tr.appendChild(tdButtonE);
             tdButtonE.appendChild(tdButtonEButton);
 
-
+            // set the html content for an element
             tdNome.innerHTML = element.nome;
             tdGenere.innerHTML = element.genere;
             tdNota.innerHTML = element.nota;
             tdButtonMButton.innerHTML = "modifica";
+            //tdButtonMButton.setAttribute("id", element.id);
             tdButtonEButton.innerHTML = "elimina";
+            //tdButtonEButton.setAttribute("id", element.id);
         });
     });
 }
@@ -65,12 +71,26 @@ function post() {
     .then((Response) => (Response.json()))
     .then(rapinatore => console.log(rapinatore))
     .catch(error => console.error())
+
+    show();
 }
 
 function put(element) {
 
 }
 
-function delet(element) {
+function delet(rowID) {
+    // find the rowID of the element
+    
+    // delete method
+    fetch("http://localhost:3000/rapinatori" + "/" + rowID, {
+        method: "DELETE"
+    })
+    .then((Response) => (Response.json()))
+    .then(rapinatore => console.log(element))
+    .catch(error => console.error())
 
+    show();
+
+    console.log("rowID" + " deleted");
 }
