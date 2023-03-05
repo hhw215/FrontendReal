@@ -1,4 +1,7 @@
 const tbody = document.getElementById("tbody");
+const formContainer = document.getElementById("form-container");
+const myForm = document.getElementById("my-form");
+const submitform = document.getElementById("submitform");
 
 /* use the Fetch API to retrieve data from a server 
 and display it in an HTML table using JavaScript */
@@ -20,12 +23,14 @@ function show() {
             const tdNota = document.createElement("td");
             const tdButtonM = document.createElement("td");
             const tdButtonMButton = document.createElement("button");
-            tdButtonMButton.addEventListener("click", put(element.id));
+            tdButtonMButton.addEventListener("click", (event) => {
+                put(element.id)});
+
             const tdButtonE = document.createElement("td");
             const tdButtonEButton = document.createElement("button");
             tdButtonEButton.addEventListener("click", (event) => {
-                console.log("element.id " + "clicked");
                 delet(element.id)});
+            
 
             // append the element node as the last child of an element
             // append the [row] to the [body]
@@ -75,8 +80,28 @@ function post() {
     show();
 }
 
-function put(element) {
-
+function put(rowID) {
+    formContainer.style.display = "block";
+    submitform.addEventListener("click", (event) => {
+        const fNome = document.getElementById("formnome");
+        const fGenere = document.getElementById("formgenere");
+        const fNota = document.getElementById("formnota");
+        let rapinatore = {
+            nome: fNome.value,
+            genere: fGenere.value,
+            nota: fNota.value
+        }
+        fetch("http://localhost:3000/rapinatori" + "/" + rowID, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(rapinatore)
+        })
+        .then((Response) => (Response.JSON()))
+        .then()
+        show();
+    });
 }
 
 function delet(rowID) {

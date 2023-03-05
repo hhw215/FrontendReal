@@ -11,6 +11,7 @@ body {
     text-align: center;
     margin: 20px auto 5px auto;
     width: 95%;
+    border-radius: 10px;
 }
 .divider {
     width: 95%;
@@ -30,7 +31,7 @@ fieldset {
 
 form {
     background-color: purple;
-    border-radius: 20px;
+    border-radius: 10px;
     width: 95%;
     margin: 5px auto;
     padding: 20px;
@@ -51,4 +52,7 @@ table {
     margin: 5px auto;
 }
 
+#form-container {
+    display: none;
+}
            
