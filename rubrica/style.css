@@ -48,8 +48,9 @@ button {
 
 table {
     width: 95%;
-    border: 2px solid black;
+    border: 4px solid black;
     margin: 5px auto;
+    border-color: purple;
 }
 
 #form-container {

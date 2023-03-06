@@ -1,54 +1,51 @@
 {
-  "rapinatori": [
+  "rubrica": [
     {
-      "nome": "Tokyo",
-      "genere": "femmina",
-      "id": 1
-    },
-    {
-      "nome": "Professore",
+      "nome": "Mario",
+      "cognome": "Rossi",
       "genere": "maschio",
-      "id": 2
-    },
-    {
-      "nome": "Rio",
-      "genere": "maschio",
+      "email": "mario.rossi@rubrica.it",
+      "cell": "88888888",
       "id": 3
     },
     {
-      "nome": "Mosca",
+      "nome": "Mario",
+      "cognome": "Rossi",
       "genere": "maschio",
+      "email": "mario.rossi@rubrica.it",
+      "cell": "88888888",
       "id": 4
     },
     {
-      "nome": "Berlino",
+      "nome": "Mario",
+      "cognome": "Rossi",
       "genere": "maschio",
+      "email": "mario.rossi@rubrica.it",
+      "cell": "88888888",
       "id": 5
     },
     {
-      "nome": "Denver",
+      "nome": "Mario",
+      "cognome": "Rossi",
       "genere": "maschio",
+      "email": "mario.rossi@rubrica.it",
+      "cell": "88888888",
       "id": 6
     },
     {
-      "nome": "Helsinki",
+      "nome": "Mario",
+      "cognome": "Rossi",
       "genere": "maschio",
+      "email": "mario.rossi@rubrica.it",
+      "cell": "88888888",
       "id": 7
     },
     {
-      "nome": "Nairobi",
-      "genere": "femmina",
+      "nome": "test",
+      "cognome": "test",
+      "email": "",
+      "cell": "",
       "id": 8
-    },
-    {
-      "nome": "Lisbona",
-      "genere": "femmina",
-      "id": 9
-    },
-    {
-      "nome": "Stoccolma",
-      "genere": "femmina",
-      "id": 10
     }
   ]
 }

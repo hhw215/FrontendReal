@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Rubrica Rapinatori Casa di Carta</title>
+        <title>Rubrica</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
@@ -12,45 +12,50 @@
     </head>
     <body>
         <div class="header">
-            <h1>La Casa Di Carta</h1>
-            <h2>Rubrica</h2>
-            <h3>-uso interno</h3>
+            <h1>Rubrica</h1>
         </div>
         <div class="divider"></div>
         <div>
             <form>
-                <fieldset>
-                    <label for="nome"><b>nome</b></label>
-                    <input type="text" id="nome" name="nome" required>
-                </fieldset>
-                <div class="divider"></div>
-                <fieldset>
-                    <label id="genere" required><b>genere</b></label>
+                <label for="nome"><b>nome</b></label>
+                <input id="nome" type="text">
+                <label for="cognome"><b>cognome</b></label>
+                <input id="cognome" type="text">
+                <label id="genere" required><b>genere</b>
                     <select>
                         <option>select</option>
                         <option>femmina</option>
                         <option>maschio</option>
                     </select>
-                </fieldset>
+                </label>
                 <div class="divider"></div>
-                <fieldset>
-                    <label for="nota"><b>nota</b></label>
-                    <textarea placeholder="nota importante" id="nota" type="text" required>ha nulla da perdere...</textarea>
-                </fieldset>
+                <label for="email"><b>email</b></label>
+                <input id="email" type="email" required>
+                <label for="cell"><b>cell</b></label>
+                <input id="cell" type="number">
                 <div class="divider"></div>
                 <button type="submit" onclick="post()">Submit</button>
             </form>
         </div>
         <div id="form-container">
             <form id="my-form">
-                <label for="formnome">nome</label>
-                <input id="formnome" required>
-
-                <label for="formgenere">genere</label>
-                <input id="formgenere" required>
-
-                <label for="formnota">nota</label>
-                <input id="formnota" required>
+                <label for="formnome"><b>nome</b></label>
+                <input id="formnome" type="text">
+                <label for="formcognome"><b>cognome</b></label>
+                <input id="formcognome" type="text">
+                <label id="formgenere" required><b>genere</b>
+                    <select>
+                        <option>select</option>
+                        <option>femmina</option>
+                        <option>maschio</option>
+                    </select>
+                </label>
+                <div class="divider"></div>
+                <label for="formemail"><b>email</b></label>
+                <input id="formemail" type="email" required>
+                <label for="formcell"><b>cell</b></label>
+                <input id="formcell" type="number">
+                <div class="divider"></div>
 
                 <button id="submitform" type="submit">Submit</button>
             </form>
@@ -58,8 +63,10 @@
         <table>
             <thead>
                 <th>nome</th> 
-                <th>genre</th>
-                <th>nota</th>
+                <th>cognome</th> 
+                <th>genere</th>
+                <th>email</th>
+                <th>cell</th>
                 <th>modifica</th>
                 <th>elimina</th>
             </thead>

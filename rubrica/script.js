@@ -9,7 +9,7 @@ show();
 
 function show() {
     tbody.innerHTML = "";
-    fetch("http://localhost:3000/rapinatori")
+    fetch("http://localhost:3000/rubrica")
     .then((Response) => (Response.json()))
     .then((data) => { 
         data.forEach(element => {
@@ -19,16 +19,18 @@ function show() {
             // create the element node(a row and its contents)
             const tr = document.createElement("tr");
             const tdNome = document.createElement("td");
+            const tdCognome = document.createElement("td");
             const tdGenere = document.createElement("td");
-            const tdNota = document.createElement("td");
-            const tdButtonM = document.createElement("td");
-            const tdButtonMButton = document.createElement("button");
-            tdButtonMButton.addEventListener("click", (event) => {
+            const tdEmail = document.createElement("td");
+            const tdCell = document.createElement("td");
+            const tdModifica = document.createElement("td");
+            const tdModificaButton = document.createElement("button");
+            tdModificaButton.addEventListener("click", (event) => {
                 put(element.id)});
 
-            const tdButtonE = document.createElement("td");
-            const tdButtonEButton = document.createElement("button");
-            tdButtonEButton.addEventListener("click", (event) => {
+            const tdElimina = document.createElement("td");
+            const tdEliminaButton = document.createElement("button");
+            tdEliminaButton.addEventListener("click", (event) => {
                 delet(element.id)});
             
 
@@ -36,71 +38,79 @@ function show() {
             // append the [row] to the [body]
             tbody.appendChild(tr);
             tr.appendChild(tdNome);
+            tr.appendChild(tdCognome);
             tr.appendChild(tdGenere);
-            tr.appendChild(tdNota);
-            tr.appendChild(tdButtonM);
-            tdButtonM.appendChild(tdButtonMButton);
-            tr.appendChild(tdButtonE);
-            tdButtonE.appendChild(tdButtonEButton);
+            tr.appendChild(tdEmail);
+            tr.appendChild(tdCell);
+            tr.appendChild(tdModifica);
+            tdModifica.appendChild(tdModificaButton);
+            tr.appendChild(tdElimina);
+            tdElimina.appendChild(tdEliminaButton);
 
             // set the html content for an element
             tdNome.innerHTML = element.nome;
+            tdCognome.innerHTML = element.cognome;
             tdGenere.innerHTML = element.genere;
-            tdNota.innerHTML = element.nota;
-            tdButtonMButton.innerHTML = "modifica";
-            //tdButtonMButton.setAttribute("id", element.id);
-            tdButtonEButton.innerHTML = "elimina";
-            //tdButtonEButton.setAttribute("id", element.id);
+            tdEmail.innerHTML = element.email;
+            tdCell.innerHTML = element.cell;
+            tdModificaButton.innerHTML = "modifica";
+            tdEliminaButton.innerHTML = "elimina";
         });
     });
 }
 
 function post() {
     const nome = document.getElementById("nome");
+    const cognome = document.getElementById("cognome");
     const genere = document.getElementById("genere");
-    const nota = document.getElementById("nota");
+    const email = document.getElementById("email");
+    const cell = document.getElementById("cell");
 
-    let rapinatore = {
+    let person = {
         nome: nome.value,
+        cognome: cognome.value,
         genere: genere.value,
-        nota: nota.value
+        email: email.value,
+        cell: cell.value
     }
 
-    fetch("http://localhost:3000/rapinatori", {
+    fetch("http://localhost:3000/rubrica", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(rapinatore)
+        body: JSON.stringify(person)
     })
     .then((Response) => (Response.json()))
-    .then(rapinatore => console.log(rapinatore))
+    .then(person => console.log(person))
     .catch(error => console.error())
-
-    show();
 }
 
 function put(rowID) {
     formContainer.style.display = "block";
     submitform.addEventListener("click", (event) => {
-        const fNome = document.getElementById("formnome");
-        const fGenere = document.getElementById("formgenere");
-        const fNota = document.getElementById("formnota");
-        let rapinatore = {
-            nome: fNome.value,
-            genere: fGenere.value,
-            nota: fNota.value
+        const fnome = document.getElementById("formnome");
+        const fcognome = document.getElementById("formcognome");
+        const fgenere = document.getElementById("formgenere");
+        const femail = document.getElementById("formemail");
+        const fcell = document.getElementById("formcell");
+
+        let person = {
+            nome: fnome.value,
+            cognome: fcognome.value,
+            genere: fgenere.value,
+            email: femail.value,
+            cell: fcell.value
         }
-        fetch("http://localhost:3000/rapinatori" + "/" + rowID, {
+        fetch("http://localhost:3000/rubrica" + "/" + rowID, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(rapinatore)
+            body: JSON.stringify(person)
         })
         .then((Response) => (Response.JSON()))
-        .then()
-        show();
+        .then(show())
     });
 }
 
@@ -108,7 +118,7 @@ function delet(rowID) {
     // find the rowID of the element
     
     // delete method
-    fetch("http://localhost:3000/rapinatori" + "/" + rowID, {
+    fetch("http://localhost:3000/rubrica" + "/" + rowID, {
         method: "DELETE"
     })
     .then((Response) => (Response.json()))
